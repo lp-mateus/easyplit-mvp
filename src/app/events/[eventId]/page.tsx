@@ -39,10 +39,14 @@ export default async function EventDetailPage({ params }: EventDetailPageProps) 
 
   return (
     <Box>
-      <EventSummary event={event} />
-      <PayersSection eventId={eventId} payers={payers} />
+      <EventSummary event={{ ...event }} />
+      <PayersSection eventId={eventId} payers={payers.map((p) => ({ ...p }))} />
       <DashboardCards data={dashboardData} />
-      <ExpensesSection eventId={eventId} expenses={expenses} payers={payers} />
+      <ExpensesSection
+        eventId={eventId}
+        expenses={expenses.map((e) => ({ ...e }))}
+        payers={payers.map((p) => ({ ...p }))}
+      />
     </Box>
   );
 }

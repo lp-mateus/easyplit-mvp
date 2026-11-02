@@ -20,7 +20,8 @@ export default async function EventsPage({ searchParams }: EventsPageProps) {
   const rawType = params.type?.trim();
   const type = rawType && EVENT_TYPES.includes(rawType as EventType) ? (rawType as EventType) : undefined;
 
-  const events = await listEvents.execute({ search: q, type });
+  const rawEvents = await listEvents.execute({ search: q, type });
+  const events = rawEvents.map((event) => ({ ...event }));
 
   return (
     <Box>
