@@ -1,0 +1,14 @@
+export const EXPENSE_CATEGORIES = [
+  "ESPACO_LOCAL",
+  "BUFFET_ALIMENTACAO",
+  "BEBIDAS_BAR",
+  "DECORACAO",
+  "MUSICA_SOM",
+  "FOTO_VIDEO",
+  "CERIMONIAL_ASSESSORIA",
+  "CONVITES_PAPELARIA",
+  "TRANSPORTE",
+  "OUTROS",
+] as const;
+
+export type ExpenseCategory = (typeof EXPENSE_CATEGORIES)[number];
